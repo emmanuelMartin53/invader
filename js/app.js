@@ -39,6 +39,7 @@ var createForm = function () {
     form.appendChild(inputPixelSize);
     // je mets le bouton dans le form
     form.appendChild(submitButton);
+
     form.addEventListener('submit', handleFormSubmit);
 }
 
@@ -50,20 +51,27 @@ var handlePixel = function (event) {
 
 };
 
-
+// je crée un fonction pour générer une grille
 var generateGrid = function() {
     drawingArea.innerHTML = " ";
+    // je crée une boucle sur et je la répète 8 fois
     for (var lineIndex = 0; lineIndex < gridSize; lineIndex++) {
+        // je crée un élément et je lui donne une classe
         var lineContainer = document.createElement('div');
         lineContainer.className = 'line';
+        // je crée un élément et j'effectue un boucle
         for (var pixelIndex = 0; pixelIndex < gridSize; pixelIndex++) {
             var pixel = document.createElement('div');
+            // je donne une classe et un style css au nouvel élément créé
             pixel.classList.add('pixel');
             pixel.style.width = pixelSize + 'px';
             pixel.style.height = pixelSize + 'px';
+            // j'écoute le clic sur l'élément
             pixel.addEventListener('click', handlePixel)
+            // je place l'élément pixel dans le DOM
             lineContainer.appendChild(pixel);
         }
+        // je place l'élément dans le DOM
         drawingArea.appendChild(lineContainer);
     
     }
