@@ -1,0 +1,60 @@
+
+
+body {
+    background: linear-gradient(45deg, #3c40c6 0%, #6d57cf 100%);
+    padding: 0;
+    margin: 0
+}
+
+.configuration {
+    background-color: #3148AD;
+    padding: 30px;
+    text-align: center;
+}
+
+.configuration input {
+    padding: 15px;
+    border: none;
+    margin-right: 1px;
+    width: 150px;
+}
+
+.form-grid-size {
+    border-radius: 10px 0 0 10px;
+}
+.form-pixel-size {
+    padding: 15px;
+    border: none;
+    margin-right: 1px;
+    width: 150px;
+}
+
+.form-submit {
+    padding: 15px;
+    background-color: #9B68E4;
+    color: white;
+    border-radius: 0 10px 10px 0;
+    border: none;
+}
+
+#invader {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.line {
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.pixel {
+    background-color: #ccc;
+    margin: 1px;
+}
+.black {
+    background-color: black;
+}
