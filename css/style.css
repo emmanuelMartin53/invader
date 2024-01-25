@@ -77,6 +77,10 @@ body {
     background-color: #fff;
 }
 
+.selected {
+    transform: scale(1.2);
+}
+
 .pixel--empty {
     background-color: #ccc;
 }

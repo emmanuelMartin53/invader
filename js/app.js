@@ -8,7 +8,7 @@ var app = {
         app.generateGrid();
         app.generateColorPicker();
      },
-     selectedColor: 'plain',
+     selectedColor: 'empty',
      styles: ['plain', 'empty','light','highlight'],
 
     handleFormSubmit : function (event) {
@@ -81,17 +81,25 @@ var app = {
         app.styles.forEach(function(element) {
             var newColor = document.createElement('div')
             newColor.className = "color pixel--" + element;
+                if (app.selectedColor=== element) {
+                    newColor.classList.add('selected');
+                }
             colorPickerContainer.appendChild(newColor);
             newColor.addEventListener('click', function() {
                 app.selectedColor = element;
                 console.log(app.selectedColor);
-                var colors = document.querySelectorAll('color');
-                colors.forEach(function(color) {
-                    
-                })
+                app.clearSelected();
+                newColor.classList.add('selected');
+    
             })
         })
     },
+    clearSelected: function () {
+        var colors = document.querySelectorAll('.color');
+        colors.forEach(function(color) {
+            color.classList.remove('selected');
+        })
+    } 
     
 
 }
